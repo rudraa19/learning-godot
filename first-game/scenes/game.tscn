@@ -355,5 +355,3 @@ theme_override_fonts/font = ExtResource("7_fam75")
 theme_override_font_sizes/font_size = 8
 text = "YOU MADE IT"
 horizontal_alignment = 1
-
-[node name="test" type="Node" parent="."]
