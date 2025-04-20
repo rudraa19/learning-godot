@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bthvlo2gidk76"]
+
+[ext_resource type="Texture2D" uid="uid://7t7n3bajy0gb" path="res://icon.svg" id="1_88iqu"]
+[ext_resource type="PackedScene" uid="uid://bjdjjev1k18uv" path="res://scenes/knight.tscn" id="2_do1uu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4kak3"]
+size = Vector2(128, 128)
+
+[node name="Level1" type="Node2D"]
+
+[node name="floor" type="StaticBody2D" parent="."]
+position = Vector2(607, 544)
+scale = Vector2(6.76, 1)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="floor"]
+texture = ExtResource("1_88iqu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor"]
+shape = SubResource("RectangleShape2D_4kak3")
+
+[node name="Knight" parent="." instance=ExtResource("2_do1uu")]
+position = Vector2(465, 384)
