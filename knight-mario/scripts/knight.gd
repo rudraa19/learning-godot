@@ -1,10 +1,20 @@
 extends CharacterBody2D
 
+const SPEED = 100
+const JUMP_FORCE = -900
+const GRAVITY = 30
+
 func _physics_process(delta):
-	move_and_slide()
 	
 	if Input.is_action_pressed("right"):
-		velocity.x = 100
+		velocity.x = SPEED
 	if Input.is_action_pressed("left"):
-		velocity.x = -100
+		velocity.x = -SPEED
+	
+	if Input.is_action_just_pressed("jump") and is_on_floor():
+		velocity.y = JUMP_FORCE
+	
+	velocity.y += GRAVITY
+	move_and_slide()
+	
 	velocity.x = lerp(velocity.x, 0.0, 0.2)
